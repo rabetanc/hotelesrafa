@@ -10,6 +10,9 @@
 	<link rel="stylesheet"
 				type="text/css"
 				href="stylesw2.css">
+
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
 </head>
 <body>
 	<a href="index.html">Home</a>
@@ -19,16 +22,66 @@
 	<a href="contact.html">Contact me</a>
 	<hr></hr>
 	<div class="container">
-		<h1> This is my first web page</h1>
+	<h1>Image Gallery</h1>
+
+		<!--
+		   These are the thumbnail images.
+		   They are laid out using the 
+		   bootstrap grid.
+		   I have given them all the class
+		   "crop-image" which I use in the
+		   css and the javascript code.
+		-->
 		<div class="row">
-			<div class="col-md-3 thin_border">
-				Some content here for panel 1
+			<div class="col-md-3">
+				<img class="crop-img" 
+				  src="img_1.jpg" 
+				  alt="graffittied building"/> 
 			</div>
-			<div class="col-md-6 thin_border">
-				Some content here for panel 2
+			<div class="col-md-3">
+				<img class="crop-img" 
+				  src="img_2.jpg" 
+				  alt="display of cheese"/> 
+			</div>
+			<div class="col-md-3">
+				<img class="crop-img" 
+				  src="img_3.jpg" 
+				  alt="synethesizer workshop"/> 
+			</div>
+			<div class="col-md-3">
+				<img class="crop-img" 
+				   src="img_4.jpg" 
+				   alt="City night"/> 
+			</div>
+		</div>
+		<!--
+			this is the large image which is
+			on a row of its own. 
+			I will change it source in the 
+			javascript
+		-->
+		<div class="row">
+			<div class="col-md-12">
+				<img id="bigImage" 
+				  class="large-img" 
+				  src="img_1.jpg" 
+				  alt="graffittied building"/> 
 			</div>
 		</div>
 	</div>
+
+	<script>
+		// when we click on the thumbnail
+		// we set the src attribute of the 
+		// big image to be the same as the 
+		// src of the image we have clicked on
+		// ("this"). This loads the same
+		// image file into the big image
+		$(".crop-img").click(function(){
+			$("#bigImage").attr('src', 
+				$(this).attr('src'));
+		});
+	</script>
 	
 	<h2>This is de sub-title</h2>
 	<p class="gap_below">
@@ -42,4 +95,6 @@
 	</p>
 
 </body>
+
+
 </html>
