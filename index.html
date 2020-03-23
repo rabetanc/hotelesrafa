@@ -34,24 +34,40 @@
 		-->
 		<div class="row">
 			<div class="col-md-3">
-				<img class="crop-img" 
-				  src="img_1.jpg" 
-				  alt="graffittied building"/> 
+				<img id="image1"
+				  class="crop-img" 
+				  src="img_1.jpg"
+				  width="100px"
+				  height="100px" 
+				  alt="Paisage 1"/> 
 			</div>
-			<div class="col-md-3">
-				<img class="crop-img" 
+			<div 
+				class="col-md-3">
+				<img 
+				  img id="image2"
+				  class="crop-img" 
 				  src="img_2.jpg" 
-				  alt="display of cheese"/> 
+				  width="100px"
+				  height="100px"
+				  alt="Paisaje 2"/> 
 			</div>
 			<div class="col-md-3">
-				<img class="crop-img" 
-				  src="img_3.jpg" 
-				  alt="synethesizer workshop"/> 
+				<img 
+				  img id="image3"
+				  class="crop-img" 
+				  src="img_3.jpg"
+				  width="100px"
+				  height="100px"
+				  alt="Paisaje 3"/> 
 			</div>
 			<div class="col-md-3">
-				<img class="crop-img" 
-				   src="img_4.jpg" 
-				   alt="City night"/> 
+				<img 
+				   img id="image4"
+				   class="crop-img" 
+				   src="img_4.jpg"
+				   width="100px"
+				   height="100px"
+				   alt="Paisaje 4"/> 
 			</div>
 		</div>
 		<!--
@@ -60,30 +76,67 @@
 			I will change it source in the 
 			javascript
 		-->
+		<br>
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-1">
+				<button id="backward">&lt;</button>
+			</div>
+
+			<div class="col-md-10">
 				<img id="bigImage" 
 				  class="large-img" 
 				  src="img_1.jpg" 
-				  alt="graffittied building"/> 
+				  width="300px"
+				  height="300px"
+				  alt="Paisaje 1"/> 
 			</div>
+			<div class="col-md-1">
+			<button id="forward">&gt;</button>
 		</div>
 	</div>
 
 	<script>
-		// when we click on the thumbnail
-		// we set the src attribute of the 
-		// big image to be the same as the 
-		// src of the image we have clicked on
-		// ("this"). This loads the same
-		// image file into the big image
+		var paused=false;
+
 		$(".crop-img").click(function(){
-			$("#bigImage").attr('src', 
-				$(this).attr('src'));
+			$("#bigImage").attr('src',
+				$(this).attr('src'))
+			
 		});
+
+		var counter = 1;
+		$("#image"+counter).click();
+
+		$("#backward").click(function(){
+			counter=counter-1;
+			if(counter<1){
+				counter=4;
+			}
+			$("#image"+counter).click();
+		});
+
+
+		$("#forward").click(function(){
+			counter=counter+1;
+			if (counter>4) {
+				counter=1;
+			}
+			$("#image"+counter).click();
+		});
+
+		$("#bigImage").click(function(){
+			paused=!paused;
+		});
+			
+		setInterval(function() {
+			if (!paused) {
+				$("#forward").click();
+			}
+		},3000);
 	</script>
-	
+
 	<h2>This is de sub-title</h2>
+	
 	<p class="gap_below">
 		<span class="indent"> The </span>first paragraph Fhe first paragraph 
 		the first paragraph Fhe first paragraph 

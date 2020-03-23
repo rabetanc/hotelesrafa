@@ -6,6 +6,11 @@
 
 <body>
     <h1 id="title" onclick="sayGoodbye();"> Hello </h1>
+
+   <h1 id="number" onclick="count();">
+   	
+   </h1>
+
  
 </body>
 
@@ -18,4 +23,13 @@
             $("#title").off("click");
         });
     };
+</script>
+
+<script type="text/javascript">
+	var counter=0;
+	$("#number").text(counter);
+	function count(){
+		counter=counter + 1;
+		$("#number").text(counter);
+	}	
 </script>
