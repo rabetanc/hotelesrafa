@@ -22,10 +22,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-          <li class="nav-item active"><a class="nav-link" href="#">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="abaut.html">Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="precios.html">Precios</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Términos y condiciones</a></li>
-          <li class="nav-item"><a class="nav-link" href="Contacto.html">Contacto</a></li>
+          <li class="nav-item active"><a class="nav-link" href="#">Contacto</a></li>
         </ul>
       </div>
       
@@ -39,11 +39,56 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="./index.html">Inicio</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Nosotros</li>
+        <li class="breadcrumb-item active" aria-current="page">contacto</li>
       </ol>
     </nav>
-   	<span> El concepto de misión es entendido como la facultad o el poder que se le es dado a una o varias personas para realizar cierto deber o encargo. Otras veces es definido como la razón de ser de algo o alguien. Y, por otro lado esta palabra se relaciona con la acción de enviar.
-    </span>
+      <h1>Dejame tu comentario</h1>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-sm-6">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="apellido">Apellido</label>
+            <input type="text" class="form-control" id="apellido"
+            placeholder="Ingrese su apellido">  
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Ingrese su email">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-9">
+            <label for="direccion">Dirección</label>
+            <input type="text" class="form-control" id="direccion" placeholder="Ingrese su direccion">
+          </div>
+          <div class="form-group col-sm-3">
+            <label for="departamento">Departamento</label>
+            <select id="departamento" class="form-control">
+              <option selected> Antioquia</option>
+              <option>Cordoba</option>
+              <option>Sucre</option>
+              <option>Bolivar</option>
+              <option>Atlantico</option>
+          </select>  
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="comentario">Comentario</label>
+          <textarea id="comentario" class="form-control" rows="10"></textarea>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Quiero que me contacten
+          </label>
+        </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
   </div>
 
   <footer>
